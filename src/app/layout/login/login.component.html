@@ -1,0 +1,71 @@
+<body class="login" style="background: rgb(255, 255, 255);">
+    <!-- PAGE -->
+    <header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-md-offset-4">
+                    <div id="logo">
+                        <a href="#"><img src="../assets/images/logo.png" height="80" alt="logo name"><br>
+
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <form #userLoginForm="ngForm" (ngSubmit)="signIn()" id="Form1">
+        <div id="UpdatePanel1">
+            <!-- LOGIN -->
+            <div id="login_bg" class="visible"> 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4" style="display:block">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="login-box" style="background:#1b426e;">
+                                <h5 class="bigintro">Student Portal Login</h5>
+                                <div class="divide-20"></div>
+                                <div id="ExceptionMsg" class="col-sm-12 form-group-2 "
+                                    style="display:none;font-size:small;color:orangered;"></div>
+                                <div>
+                                    <label for="txtUserName">Email*</label>
+                                    <input name="txtUserName" type="text" id="txtUserName" title="Enter User Name"
+                                        placeholder="Enter User Name" class="form-control" autocomplete="off" [(ngModel)]="email">
+                                </div>
+                                <div>
+                                    <label for="txtPass">Password*</label>
+
+                                    <input name="txtPass" type="password" id="txtPass" accesskey="P"
+                                        title="Enter Password" placeholder="Enter Password" class="form-control"
+                                        autocomplete="off" [(ngModel)]="password" >
+
+                                </div>
+                                <div><br></div>
+                                <div>
+                                    <input type="submit" name="btnLogin" value="Login" id="btnLogin" class="btn"
+                                        style="color:White;background-color:DarkGray;border-color:Black;">
+                                </div>
+
+                                <div>
+                                    <input  name="btnRegister" value="Register" id="btnRegister" class="btn" 
+                                    style="color:White;background-color:DarkGray;border-color:Black;" routerLink="/register">
+                                </div>
+
+
+                                <div class="login-helpers">
+                                    <h5>For Any Query / Problem Contact to DEAN Academic Office.</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- LOGIN -->
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>
