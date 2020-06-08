@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   cPassword: string;
   forms = document.getElementsByClassName('needs-validation');
   valid: boolean = false;
+  department: string = "Select the department";
 
   constructor(
     private auth: AuthService,
@@ -27,9 +28,6 @@ export class RegisterComponent implements OnInit {
     .subscribe(() => {
       console.log("HERE");
       this.router.navigate(['../profile'])
-      .then(() => {
-        window.location.reload();
-      });
     });
     'use strict';
     (function () {
@@ -54,7 +52,7 @@ export class RegisterComponent implements OnInit {
     this.validations();
     console.log(this.valid);
     if (this.valid) {
-      this.auth.SignUp(this.email, this.rollNumber, this.username, this.password);
+      this.auth.SignUp(this.email, this.rollNumber, this.username, this.password, this.department);
     }
     this.email = '';
     this.rollNumber = '';

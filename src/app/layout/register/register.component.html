@@ -51,6 +51,33 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="control-label" for="textDepartment">Department*</label>
+                    <div>
+                        <button type="button" id="textDepartment" class="btn btnDepartment btn-primary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            {{ department }}
+                        </button>
+                        <div class="dropdown-menu" id="menuDepartment">
+                            <a class="dropdown-item" (click)="department='Bio-Chemical Engineering'">Bio-Chemical Engineering</a>
+                            <a class="dropdown-item" (click)="department='Chemical Engineering'">Chemical Engineering</a>
+                            <a class="dropdown-item" (click)="department='Civil Engineering'">Civil Engineering</a>
+                            <a class="dropdown-item" (click)="department='Computer Science & Engineering'">Computer Science & Engineering</a>
+                            <a class="dropdown-item" (click)="department='Electronics Engineering'">Electronics Engineering</a>
+                            <a class="dropdown-item" (click)="department='Electrical Engeering'">Electrical Engeering</a>
+                            <a class="dropdown-item" (click)="department='Food Technology'">Food Technology</a>
+                            <a class="dropdown-item" (click)="department='Infotmation Technology'">Infotmation Technology</a>
+                            <a class="dropdown-item" (click)="department='Leather Technology'">Leather Technology</a>
+                            <a class="dropdown-item" (click)="department='MCA'">MCA</a>
+                            <a class="dropdown-item" (click)="department='MBA'">MBA</a>
+                            <a class="dropdown-item" (click)="department='Mechanical Engeering'">Mechanical Engeering</a>
+                            <a class="dropdown-item" (click)="department='M.Sc.'">M.Sc.</a>
+                            <a class="dropdown-item" (click)="department='Oil Technology'">Oil Technology</a>
+                            <a class="dropdown-item" (click)="department='Paint Technology'">Paint Technology</a>
+                            <a class="dropdown-item" (click)="department='Plastic Technology'">Plastic Technology</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="control-label" for="passwordInput">Password*</label>
                     <input class="form-control" name="txtPass" type="password" id="passwordInput" accesskey="P" required="true"
                         title="Enter Password" placeholder="Enter Password" autocomplete="off" [(ngModel)]="password" (keyup)="checkPasswordMatch()">

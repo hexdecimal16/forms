@@ -17,17 +17,26 @@ export class AuthService {
   constructor(
     private angularFireAuth: AngularFireAuth,
     private router: Router
-    ) {
+  ) {
     this.userData = angularFireAuth.authState;
   }
 
   /* Sign up */
-  SignUp(email: string, rollNumber: string, username:string, password: string) {
+  SignUp(email: string, rollNumber: string, username: string, password: string, department: string) {
     this.angularFireAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
       .then(res => {
-        this.writeUserData(username, email, rollNumber);
+        firebase.auth().currentUser.updateProfile({
+          displayName: username
+        });
+        firebase.auth().currentUser.updateEmail(email);
+        firebase.auth().currentUser.sendEmailVerification().then(() => {
+          console.log("Verification email sent");
+        }).catch(function (error) {
+          console.log("Verification email faild");
+        });
+        this.writeUserData(username, email, rollNumber, department);
         console.log('You are Successfully signed up!', res);
         this.router.navigate(['/profile']);
       })
@@ -54,18 +63,26 @@ export class AuthService {
   SignOut() {
     this.angularFireAuth
       .auth
-      .signOut();
+      .signOut()
+      .then(() => {
+        this.router.navigate(['/'])
+          .then(() => {
+            window.location.reload();
+          });
+      });
+
   }
 
-  writeUserData(username, email, rollNumber) {
+  writeUserData(username, email, rollNumber, department) {
     firebase.database().ref('users/' + username).set({
       username: username,
       email: email,
-      rollNumber:  rollNumber
+      rollNumber: rollNumber,
+      department: department
     });
   }
 
-  getUserAuthState(): any{
+  getUserAuthState(): any {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.userAuthenticated.emit(null);

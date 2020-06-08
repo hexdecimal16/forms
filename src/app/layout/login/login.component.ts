@@ -22,9 +22,6 @@ export class LoginComponent implements OnInit {
     .subscribe(() => {
       console.log("HERE");
       this.router.navigate(['../profile'])
-      .then(() => {
-        window.location.reload();
-      });;
     });
   }
 

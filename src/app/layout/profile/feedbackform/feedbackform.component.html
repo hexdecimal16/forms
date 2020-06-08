@@ -17,9 +17,17 @@
         color: #000;
     }
 </style>
-<section class="box" style="border:2px solid #43a7d5; width: 100%; margin-top: 40px;">
-
-
+<div id="emailVerification" class="container row">
+    <div class="alert alert-warning col-md-12" role="alert" id="notes">
+      <h4>NOTES</h4>
+      <ul>
+        <li>You have recieved a verification mail after you registered mail. Complete that process.</li>
+        <li>You cannot send feedback untill you are verified.</li>
+        <li>If somehow, you did not recieve the verification email then <a style="color: blue;" (click)="resendVerification()">resend the verification email</a></li>
+      </ul>
+    </div>
+  </div>
+<section id="feedbackForm" class="box" style="border:2px solid #43a7d5; width: 100%; margin-top: 40px;">
     <aside style="padding:15px">
         <p>Dear Student,<br>
             Thank you for taking the time to fill out this confidential questionnaire thoughtfully. The information will

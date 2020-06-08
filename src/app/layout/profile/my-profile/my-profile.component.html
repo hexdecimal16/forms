@@ -2,49 +2,49 @@
     <div class="row">
         <div class="col-lg-6 col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="exampleInputEmail1">Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name" disabled>
+                <label for="textUsername">Username</label>
+                <input type="text" class="form-control" id="textUsername" [placeholder]="username" disabled>
             </div>
         </div>
 
         <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" disabled>
+                <label for="txtEmail">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" [placeholder]="email" disabled>
             </div>
         </div>
         <div class="col-lg-6 col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="exampleInputEmail1">Roll Number</label>
-                <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Roll Number">
+                <label for="numRollNumber">Roll Number</label>
+                <input type="number" class="form-control" id="numRollNumber" [placeholder]="rollNumber" disabled>
             </div>
         </div>
 
         <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="exampleInputEmail1">Department</label>
+                <label for="textDepartment">Department</label>
                 <div>
-                    <button type="button" id="btnDepartment" class="btn btnDepartment btn-primary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select the department
+                    <button type="button" id="textDepartment" class="btn btnDepartment btn-primary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                        {{ department }}
                     </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item">Bio-Chemical Engineering</a>
-                        <a class="dropdown-item">Chemical Engineering</a>
-                        <a class="dropdown-item">Civil Engeering</a>
-                        <a class="dropdown-item">Computer Science & Engineering</a>
-                        <a class="dropdown-item">Electronics Engineering</a>
-                        <a class="dropdown-item">Electrical Engeering</a>
-                        <a class="dropdown-item">Food Technology</a>
-                        <a class="dropdown-item">Infotmation Technology</a>
-                        <a class="dropdown-item">Leather Technology</a>
-                        <a class="dropdown-item">MCA</a>
-                        <a class="dropdown-item">MBA</a>
-                        <a class="dropdown-item">Mechanical Engeering</a>
-                        <a class="dropdown-item">M.Sc.</a>
-                        <a class="dropdown-item">Oil Technology</a>
-                        <a class="dropdown-item">Paint Technology</a>
-                        <a class="dropdown-item">Plastic Technology</a>
+                    <div class="dropdown-menu" id="menuDepartment">
+                        <a class="dropdown-item" (click)="department='Bio-Chemical Engineering'">Bio-Chemical Engineering</a>
+                        <a class="dropdown-item" (click)="department='Chemical Engineering'">Chemical Engineering</a>
+                        <a class="dropdown-item" (click)="department='Civil Engineering'">Civil Engineering</a>
+                        <a class="dropdown-item" (click)="department='Computer Science & Engineering'">Computer Science & Engineering</a>
+                        <a class="dropdown-item" (click)="department='Electronics Engineering'">Electronics Engineering</a>
+                        <a class="dropdown-item" (click)="department='Electrical Engeering'">Electrical Engeering</a>
+                        <a class="dropdown-item" (click)="department='Food Technology'">Food Technology</a>
+                        <a class="dropdown-item" (click)="department='Infotmation Technology'">Infotmation Technology</a>
+                        <a class="dropdown-item" (click)="department='Leather Technology'">Leather Technology</a>
+                        <a class="dropdown-item" (click)="department='MCA'">MCA</a>
+                        <a class="dropdown-item" (click)="department='MBA'">MBA</a>
+                        <a class="dropdown-item" (click)="department='Mechanical Engeering'">Mechanical Engeering</a>
+                        <a class="dropdown-item" (click)="department='M.Sc.'">M.Sc.</a>
+                        <a class="dropdown-item" (click)="department='Oil Technology'">Oil Technology</a>
+                        <a class="dropdown-item" (click)="department='Paint Technology'">Paint Technology</a>
+                        <a class="dropdown-item" (click)="department='Plastic Technology'">Plastic Technology</a>
                     </div>
                 </div>
             </div>
@@ -52,20 +52,20 @@
 
         <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="exampleInputEmail1">Password</label>
-                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Password">
+                <label for="passPassword">Password</label>
+                <input type="password" class="form-control" id="passPassword" placeholder="Password">
             </div>
         </div>
 
         <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
             <div class="form-group">
-                <label for="exampleInputEmail1">Confirm Password</label>
-                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Confirm Password">
+                <label for="passConfirmPasword">Confirm Password</label>
+                <input type="password" class="form-control" id="passConfirmPasword" placeholder="Confirm Password">
             </div>
         </div>
     </div>
     <hr>
     <div class="pull-right">
-        <a href="#" role="button" class="btn btn-primary btn-large">Submit</a>
+        <a href="#" type="submit" role="button" class="btn btn-primary btn-large">Submit</a>
     </div>
 </form>
