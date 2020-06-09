@@ -91,4 +91,13 @@ export class AuthService {
     });
   }
 
+  updatePassword(password: string) {
+    firebase.auth().currentUser.updatePassword(password).then(() => {
+      alert("password set successfully");
+    }).catch(function (error) {
+      alert("Password cannot be changed right now");
+    });
+  }
+
+
 }

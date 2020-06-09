@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
     this.auth.getUserAuthState();
     this.auth.userAuthenticated
     .subscribe(() => {
-      console.log("HERE");
       this.router.navigate(['../profile'])
     });
   }

@@ -18,15 +18,16 @@
     }
 </style>
 <div id="emailVerification" class="container row">
-    <div class="alert alert-warning col-md-12" role="alert" id="notes">
-      <h4>NOTES</h4>
-      <ul>
-        <li>You have recieved a verification mail after you registered mail. Complete that process.</li>
-        <li>You cannot send feedback untill you are verified.</li>
-        <li>If somehow, you did not recieve the verification email then <a style="color: blue;" (click)="resendVerification()">resend the verification email</a></li>
-      </ul>
+    <div class="alert alert-danger col-md-12" role="alert" id="notes">
+        <h4>NOTES</h4>
+        <ul>
+            <li>You have recieved a verification mail after your registration. Check your inbox.</li>
+            <li>You cannot send feedback untill you are verified.</li>
+            <li>If somehow, you did not recieve the verification email then <a style="color: blue;"
+                    (click)="resendVerification()">resend the verification email</a></li>
+        </ul>
     </div>
-  </div>
+</div>
 <section id="feedbackForm" class="box" style="border:2px solid #43a7d5; width: 100%; margin-top: 40px;">
     <aside style="padding:15px">
         <p>Dear Student,<br>
@@ -37,224 +38,224 @@
 
         <h4>Please rate the following on a scale of 5 [where, 5-Excellent; 1 -poor]</h4>
 
-        <form class="column"method="post" target="_blank">
+        <form class="column" method="post" target="_blank" (ngSubmit)="submitFeedback()" >
             <label>1. Availability of lecture plan as per syllabus in the begining of the semester and coverage
                 of syllabus accordingly ?</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_1" name="star5_1" value="1" (click)="question1=1"><i></i>
+                <input type="radio" id="star4_1" name="star4_1" value="2" (click)="question1=2"><i></i>
+                <input type="radio" id="star3_1" name="star3_1" value="3" (click)="question1=3"><i></i>
+                <input type="radio" id="star2_1" name="star2_1" value="4" (click)="question1=4"><i></i>
+                <input type="radio" id="star1_1" name="star1_1" value="5" (click)="question1=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>2. Coverage of the syllabus.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_2" name="star5_2" value="1" (click)="question2=1"><i></i>
+                <input type="radio" id="star4_2" name="star4_2" value="2" (click)="question2=2"><i></i>
+                <input type="radio" id="star3_2" name="star3_2" value="3" (click)="question2=3"><i></i>
+                <input type="radio" id="star2_2" name="star2_2" value="4" (click)="question2=4"><i></i>
+                <input type="radio" id="star1_2" name="star1_2" value="5" (click)="question2=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>3. Regularity of the teacher.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_3" name="star5_3" value="1" (click)="question3=1"><i></i>
+                <input type="radio" id="star4_3" name="star4_3" value="2" (click)="question3=2"><i></i>
+                <input type="radio" id="star3_3" name="star3_3" value="3" (click)="question3=3"><i></i>
+                <input type="radio" id="star2_3" name="star2_3" value="4" (click)="question3=4"><i></i>
+                <input type="radio" id="star1_3" name="star1_3" value="5" (click)="question3=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>4. Knowledge of the subject.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_4" name="star5_4" value="1" (click)="question4=1"><i></i>
+                <input type="radio" id="star4_4" name="star4_4" value="2" (click)="question4=2"><i></i>
+                <input type="radio" id="star3_4" name="star3_4" value="3" (click)="question4=3"><i></i>
+                <input type="radio" id="star2_4" name="star2_4" value="4" (click)="question4=4"><i></i>
+                <input type="radio" id="star1_4" name="star1_4" value="5" (click)="question4=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>5. Ability of teacher to teach / explain confidently and answer queries in the class.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_5" name="star5_5" value="1" (click)="question5=1"><i></i>
+                <input type="radio" id="star4_5" name="star4_5" value="2" (click)="question5=2"><i></i>
+                <input type="radio" id="star3_5" name="star3_5" value="3" (click)="question5=3"><i></i>
+                <input type="radio" id="star2_5" name="star2_5" value="4" (click)="question5=4"><i></i>
+                <input type="radio" id="star1_5" name="star1_5" value="5" (click)="question5=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>6. Organization of the lecture.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_6" name="star5_6" value="1" (click)="question6=1"><i></i>
+                <input type="radio" id="star4_6" name="star4_6" value="2" (click)="question6=2"><i></i>
+                <input type="radio" id="star3_6" name="star3_6" value="3" (click)="question6=3"><i></i>
+                <input type="radio" id="star2_6" name="star2_6" value="4" (click)="question6=4"><i></i>
+                <input type="radio" id="star1_6" name="star1_6" value="5" (click)="question6=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>7. Audibility of teacher's voice during classes.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_7" name="star5_7" value="1" (click)="question7=1"><i></i>
+                <input type="radio" id="star4_7" name="star4_7" value="2" (click)="question7=2"><i></i>
+                <input type="radio" id="star3_7" name="star3_7" value="3" (click)="question7=3"><i></i>
+                <input type="radio" id="star2_7" name="star2_7" value="4" (click)="question7=4"><i></i>
+                <input type="radio" id="star1_7" name="star1_7" value="5" (click)="question7=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>8. Utilization of blackboard/other teaching aids.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_8" name="star5_8" value="1" (click)="question8=1"><i></i>
+                <input type="radio" id="star4_8" name="star4_8" value="2" (click)="question8=2"><i></i>
+                <input type="radio" id="star3_8" name="star3_8" value="3" (click)="question8=3"><i></i>
+                <input type="radio" id="star2_8" name="star2_8" value="4" (click)="question8=4"><i></i>
+                <input type="radio" id="star1_8" name="star1_8" value="5" (click)="question8=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>9. Summarizing of key points by the teacher at the end of a class.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_9" name="star5_9" value="1" (click)="question9=1"><i></i>
+                <input type="radio" id="star4_9" name="star4_9" value="2" (click)="question9=2"><i></i>
+                <input type="radio" id="star3_9" name="star3_9" value="3" (click)="question9=3"><i></i>
+                <input type="radio" id="star2_9" name="star2_9" value="4" (click)="question9=4"><i></i>
+                <input type="radio" id="star1_9" name="star1_9" value="5" (click)="question9=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>10. Understanding of the concepts using solution of problems/ numerical in the class.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_10" name="star5_10" value="1" (click)="question10=1"><i></i>
+                <input type="radio" id="star4_10" name="star4_10" value="2" (click)="question10=2"><i></i>
+                <input type="radio" id="star3_10" name="star3_10" value="3" (click)="question10=3"><i></i>
+                <input type="radio" id="star2_10" name="star2_10" value="4" (click)="question10=4"><i></i>
+                <input type="radio" id="star1_10" name="star1_10" value="5" (click)="question10=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>11. Respect and understanding for students.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_11" name="star5_11" value="1" (click)="question11=1"><i></i>
+                <input type="radio" id="star4_11" name="star4_11" value="2" (click)="question11=2"><i></i>
+                <input type="radio" id="star3_11" name="star3_11" value="3" (click)="question11=3"><i></i>
+                <input type="radio" id="star2_11" name="star2_11" value="4" (click)="question11=4"><i></i>
+                <input type="radio" id="star1_11" name="star1_11" value="5" (click)="question11=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>12. Encouragement to the students for asking questions in the class .</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_12" name="star5_12" value="1" (click)="question12=1"><i></i>
+                <input type="radio" id="star4_12" name="star4_12" value="2" (click)="question12=2"><i></i>
+                <input type="radio" id="star3_12" name="star3_12" value="3" (click)="question12=3"><i></i>
+                <input type="radio" id="star2_12" name="star2_12" value="4" (click)="question12=4"><i></i>
+                <input type="radio" id="star1_12" name="star1_12" value="5" (click)="question12=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>13. Tolerance to different opinions, arguments expressed in class.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_13" name="star5_13" value="1" (click)="question13=1"><i></i>
+                <input type="radio" id="star4_13" name="star4_13" value="2" (click)="question13=2"><i></i>
+                <input type="radio" id="star3_13" name="star3_13" value="3" (click)="question13=3"><i></i>
+                <input type="radio" id="star2_13" name="star2_13" value="4" (click)="question13=4"><i></i>
+                <input type="radio" id="star1_13" name="star1_13" value="5" (click)="question13=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>14. Availability of teacher beyond the class hours.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_14" name="star5_14" value="1" (click)="question14=1"><i></i>
+                <input type="radio" id="star4_14" name="star4_14" value="2" (click)="question14=2"><i></i>
+                <input type="radio" id="star3_14" name="star3_14" value="3" (click)="question14=3"><i></i>
+                <input type="radio" id="star2_14" name="star2_14" value="4" (click)="question14=4"><i></i>
+                <input type="radio" id="star1_14" name="star1_14" value="5" (click)="question14=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>15. Ability to adjust to the pace of class to the students' level of understanding.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_15" name="star5_15" value="1" (click)="question15=1"><i></i>
+                <input type="radio" id="star4_15" name="star4_15" value="2" (click)="question15=2"><i></i>
+                <input type="radio" id="star3_15" name="star3_15" value="3" (click)="question15=3"><i></i>
+                <input type="radio" id="star2_15" name="star2_15" value="4" (click)="question15=4"><i></i>
+                <input type="radio" id="star1_15" name="star1_15" value="5" (click)="question15=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>16. Regular assignments in the tutorial class.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_16" name="star5_16" value="1" (click)="question16=1"><i></i>
+                <input type="radio" id="star4_16" name="star4_16" value="2" (click)="question16=2"><i></i>
+                <input type="radio" id="star3_16" name="star3_16" value="3" (click)="question16=3"><i></i>
+                <input type="radio" id="star2_16" name="star2_16" value="4" (click)="question16=4"><i></i>
+                <input type="radio" id="star1_16" name="star1_16" value="5" (click)="question16=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>17. Checking and timely return of corrected assignments.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_17" name="star5_17" value="1" (click)="question17=1"><i></i>
+                <input type="radio" id="star4_17" name="star4_17" value="2" (click)="question17=2"><i></i>
+                <input type="radio" id="star3_17" name="star3_17" value="3" (click)="question17=3"><i></i>
+                <input type="radio" id="star2_17" name="star2_17" value="4" (click)="question17=4"><i></i>
+                <input type="radio" id="star1_17" name="star1_17" value="5" (click)="question17=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>18. Guidelines and tips on pattern of question papers and exams provided by the teacher.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_18" name="star5_18" value="1" (click)="question18=1"><i></i>
+                <input type="radio" id="star4_18" name="star4_18" value="2" (click)="question18=2"><i></i>
+                <input type="radio" id="star3_18" name="star3_18" value="3" (click)="question18=3"><i></i>
+                <input type="radio" id="star2_18" name="star2_18" value="4" (click)="question18=4"><i></i>
+                <input type="radio" id="star1_18" name="star1_18" value="5" (click)="question18=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>19.Level of mid-semester/class tests.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_19" name="star5_19" value="1" (click)="question19=1"><i></i>
+                <input type="radio" id="star4_19" name="star4_19" value="2" (click)="question19=2"><i></i>
+                <input type="radio" id="star3_19" name="star3_19" value="3" (click)="question19=3"><i></i>
+                <input type="radio" id="star2_19" name="star2_19" value="4" (click)="question19=4"><i></i>
+                <input type="radio" id="star1_19" name="star1_19" value="5" (click)="question19=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>20. Timely evaluation and showing of answer sheets of mid semester exams/class tests.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_20" name="star5_20" value="1" (click)="question20=1"><i></i>
+                <input type="radio" id="star4_20" name="star4_20" value="2" (click)="question20=2"><i></i>
+                <input type="radio" id="star3_20" name="star3_20" value="3" (click)="question20=3"><i></i>
+                <input type="radio" id="star2_20" name="star2_20" value="4" (click)="question20=4"><i></i>
+                <input type="radio" id="star1_20" name="star1_20" value="5" (click)="question20=5"><i></i>
             </span>
 
             <div class="clear"></div>
@@ -262,84 +263,79 @@
             <label>21. Uniform coverage (unit wise) of syllabus as per prescribed guidelines in the end semester
                 question paper.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_21" name="star5_21" value="1" (click)="question21=1"><i></i>
+                <input type="radio" id="star4_21" name="star4_21" value="2" (click)="question21=2"><i></i>
+                <input type="radio" id="star3_21" name="star3_21" value="3" (click)="question21=3"><i></i>
+                <input type="radio" id="star2_21" name="star2_21" value="4" (click)="question21=4"><i></i>
+                <input type="radio" id="star1_21" name="star1_21" value="5" (click)="question21=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>22. Level of end semester exams ?</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_22" name="star5_22" value="1" (click)="question22=1"><i></i>
+                <input type="radio" id="star4_22" name="star4_22" value="2" (click)="question22=2"><i></i>
+                <input type="radio" id="star3_22" name="star3_22" value="3" (click)="question22=3"><i></i>
+                <input type="radio" id="star2_22" name="star2_22" value="4" (click)="question22=4"><i></i>
+                <input type="radio" id="star1_22" name="star1_22" value="5" (click)="question22=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>23. Satisfaction level for the evaluation of end semester exam.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_23" name="star5_23" value="1" (click)="question23=1"><i></i>
+                <input type="radio" id="star4_23" name="star4_23" value="2" (click)="question23=2"><i></i>
+                <input type="radio" id="star3_23" name="star3_23" value="3" (click)="question23=3"><i></i>
+                <input type="radio" id="star2_23" name="star2_23" value="4" (click)="question23=4"><i></i>
+                <input type="radio" id="star1_23" name="star1_23" value="5" (click)="question23=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>24. Fairness of end semester exams evaluation.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_24" name="star5_24" value="1" (click)="question24=1"><i></i>
+                <input type="radio" id="star4_24" name="star4_24" value="2" (click)="question24=2"><i></i>
+                <input type="radio" id="star3_24" name="star3_24" value="3" (click)="question24=3"><i></i>
+                <input type="radio" id="star2_24" name="star2_24" value="4" (click)="question24=4"><i></i>
+                <input type="radio" id="star1_24" name="star1_24" value="5" (click)="question24=5"><i></i>
             </span>
 
             <div class="clear"></div>
             <hr class="survey-hr">
             <label>25. Efforts for motivating the students during the course of this subject.</label><br>
             <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
+                <input type="radio" id="star5_25" name="star5_25" value="1" (click)="question25=1"><i></i>
+                <input type="radio" id="star4_25" name="star4_25" value="2" (click)="question25=2"><i></i>
+                <input type="radio" id="star3_25" name="star3_25" value="3" (click)="question25=3"><i></i>
+                <input type="radio" id="star2_25" name="star2_25" value="4" (click)="question25=4"><i></i>
+                <input type="radio" id="star1_25" name="star1_25" value="5" (click)="question25=5"><i></i>
             </span>
 
 
             <div class="clear"></div>
             <hr class="survey-hr">
-            <label for="m_3189847521540640526commentText">What suggestions would you give to improve this instructor's
+            <label for="m_3189847521540640526commentText">26. What suggestions would you give to improve this instructor's
                 teaching ?</label><br /><br />
-            <textarea cols="75" name="commentText" rows="5" style="width:320px"></textarea><br>
+            <textarea cols="75" id="question26" [(ngModel)]='question26' name="question26" rows="5" style="width:320px"></textarea><br>
             <br>
             <div class="clear"></div>
 
             <div class="clear"></div>
             <hr class="survey-hr">
-            <label for="m_3189847521540640526commentText">What do you like best about this course ?</label><br /><br />
-            <textarea cols="75" name="commentText" rows="5" style="width:320px"></textarea><br>
+            <label for="m_3189847521540640526commentText">27. What do you like best about this course ?</label><br /><br />
+            <textarea cols="75" id="question27" [(ngModel)]='question27' name="question27" rows="5" style="width:320px"></textarea><br>
             <br>
             <div class="clear"></div>
 
-            <div class="clear"></div>
-            <hr class="survey-hr">
-            <label for="m_3189847521540640526commentText">What would you like to change about this course ?</label><br /><br />
-            <textarea cols="75" name="commentText" rows="5" style="width:320px"></textarea><br>
-            <br>
-            <div class="clear"></div>
 
             <div class="clear"></div>
             <hr class="survey-hr">
-            <label for="m_3189847521540640526commentText">What do you think the instructor's greatest strengths are ?</label><br /><br />
-            <textarea cols="75" name="commentText" rows="5" style="width:320px"></textarea><br>
+            <label for="m_3189847521540640526commentText">28. What do you think the instructor's greatest strengths are
+                ?</label><br /><br />
+            <textarea cols="75" id="question28" [(ngModel)]='question28' name="question28" rows="5" style="width:320px"></textarea><br>
             <br>
             <div class="clear"></div>
             <input style="background:#43a7d5;color:#fff;padding:12px;border:0" type="submit"

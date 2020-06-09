@@ -13,21 +13,33 @@ export class MyProfileComponent implements OnInit {
   username;
   email;
   rollNumber;
-  password;
-  cPassword;
+  password: string;
+  cPassword: string;
   user;
   department: string = "Select your department";
 
   ngOnInit(): void {
     this.username = firebase.auth().currentUser.displayName;
     this.email = firebase.auth().currentUser.email;
-    this.rollNumber = firebase.database().ref('/users/' + this.username).once('value')
-    .then((snapshot) => {
-      this.rollNumber = snapshot.val().rollNumber;
-      this.department = snapshot.val().department;
-    });
+    firebase.database().ref('/users/' + this.username).once('value')
+      .then((snapshot) => {
+        this.rollNumber = snapshot.val().rollNumber;
+        this.department = snapshot.val().department;
+      });
 
     console.log(this.rollNumber);
+  }
+
+  setChanges() {
+    if(this.password != null && this.cPassword != "null") {
+      if(this.password.length < 6) {
+        alert("Minimum password lenght should be 6 characters")
+      } else if (this.password == this.cPassword){
+        this.auth.updatePassword(this.password);
+      } else {
+        alert("Password does not match")
+      }
+    }
   }
 
 }
