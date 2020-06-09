@@ -3,14 +3,13 @@ import { AuthService } from '../../auth/auth.service'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-admin-register',
+  templateUrl: './admin-register.component.html',
+  styleUrls: ['./admin-register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class AdminRegisterComponent implements OnInit {
 
   username: string;
-  rollNumber: string;
   email: string;
   password: string;
   cPassword: string;
@@ -20,16 +19,16 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router: Router) { }
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.auth.getUserAuthState();
     this.auth.userAuthenticated
     .subscribe(() => {
-      console.log("HERE");
       this.router.navigate(['/profile'])
     });
-    'use strict';
+    'use-strict';
     (function () {
       window.addEventListener('load', function () {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -48,14 +47,13 @@ export class RegisterComponent implements OnInit {
     })();
   }
 
-  signUp() {
+  signUp() { 
     this.validations();
     console.log(this.valid);
     if (this.valid) {
-      this.auth.SignUp(this.email, this.rollNumber, this.username, this.password, this.department, "student");
+      this.auth.SignUp(this.email, null, this.username, this.password, this.department, "admin");
     }
     this.email = '';
-    this.rollNumber = '';
     this.username = ''
     this.password = '';
   }
@@ -63,9 +61,7 @@ export class RegisterComponent implements OnInit {
   validations() {
     this.checkPasswordMatch();
     this.checkEmailMatch();
-
   }
-
 
   checkPasswordLength(){
     if(this.password.length < 6) {
@@ -78,8 +74,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-
-  checkPasswordMatch() {
+  checkPasswordMatch() { 
     if (this.password == this.cPassword && this.cPassword != "" ) {
       document.getElementById("confirmPasswordInput").style.color = "green";
       document.getElementById("confirmPasswordInputValidationSpan").style.color = "green";
@@ -99,7 +94,7 @@ export class RegisterComponent implements OnInit {
     this.checkPasswordLength();
   }
 
-  checkEmailMatch() {
+  checkEmailMatch() { 
     const pattern = /@hbtu.ac.in/;
     const isValid = pattern.test(this.email);
     if (isValid) {
@@ -118,5 +113,4 @@ export class RegisterComponent implements OnInit {
       this.valid = false;
     }
   }
-
 }

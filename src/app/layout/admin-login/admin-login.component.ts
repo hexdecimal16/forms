@@ -3,31 +3,32 @@ import { AuthService } from '../../auth/auth.service'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AdminLoginComponent implements OnInit {
+
+  password;
+  email;
 
   constructor(
     private auth: AuthService,
     private router: Router) { }
 
-  email: string;
-  password: string;
-
   ngOnInit(): void {
     this.auth.getUserAuthState();
     this.auth.userAuthenticated
     .subscribe(() => {
-      this.router.navigate(['/profile'])
+      this.router.navigate(['/adminProfile'])
     });
   }
 
   signIn() {
-    this.auth.SignIn(this.email, this.password, "student");
+    this.auth.SignIn(this.email, this.password, "admin");
     this.email = '';
     this.password = '';
   }
+
 
 }

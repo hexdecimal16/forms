@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   /* Sign up */
-  SignUp(email: string, rollNumber: string, username: string, password: string, department: string) {
+  SignUp(email: string, rollNumber: string, username: string, password: string, department: string, type: string) {
     this.angularFireAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
@@ -36,9 +36,13 @@ export class AuthService {
         }).catch(function (error) {
           console.log("Verification email faild");
         });
-        this.writeUserData(username, email, rollNumber, department);
+        this.writeUserData(username, email, rollNumber, department, type);
         console.log('You are Successfully signed up!', res);
-        this.router.navigate(['/profile']);
+        if (type == "student") {
+          this.router.navigate(['/profile']);
+        } else {
+          this.router.navigate(['/adminProfile']);
+        }
       })
       .catch(error => {
         console.log('Something is wrong:', error.message);
@@ -46,13 +50,17 @@ export class AuthService {
   }
 
   /* Sign in */
-  SignIn(email: string, password: string) {
+  SignIn(email: string, password: string, type: string) {
     this.angularFireAuth
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('You are Successfully logged in!');
-        this.router.navigate(['/profile']);
+        if (type == "student") {
+          this.router.navigate(['/profile']);
+        } else {
+          this.router.navigate(['/adminProfile']);
+        }
       })
       .catch(err => {
         console.log('Something is wrong:', err.message);
@@ -73,12 +81,13 @@ export class AuthService {
 
   }
 
-  writeUserData(username, email, rollNumber, department) {
-    firebase.database().ref('users/' + username).set({
+  writeUserData(username, email, rollNumber, department, type: string) {
+    firebase.database().ref('users/' + type + "/" + username).set({
       username: username,
       email: email,
       rollNumber: rollNumber,
-      department: department
+      department: department,
+      type: type
     });
   }
 

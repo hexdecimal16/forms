@@ -13,6 +13,8 @@ import { LoginComponent } from './layout/login/login.component';
 import { RegisterComponent } from './layout/register/register.component';
 import {Routes, RouterModule} from '@angular/router';
 import { FeedbackformComponent } from './layout/profile/feedbackform/feedbackform.component';
+import { AdminLoginComponent } from './layout/admin-login/admin-login.component'
+import { AdminRegisterComponent } from './layout/admin-register/admin-register.component'
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -23,7 +25,9 @@ const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'adminRegister', component: AdminRegisterComponent},
+  {path: 'adminLogin', component: AdminLoginComponent}
 ];
 
 const config = {
@@ -47,7 +51,9 @@ const config = {
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    FeedbackformComponent
+    FeedbackformComponent,
+    AdminLoginComponent,
+    AdminRegisterComponent
   ],
   imports: [
     BrowserModule,
