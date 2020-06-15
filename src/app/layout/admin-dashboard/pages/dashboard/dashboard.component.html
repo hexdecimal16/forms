@@ -1,0 +1,448 @@
+<br>
+<div class="row">
+  <div class="col-lg">
+    <div class="card card-chart-sm">
+      <div class="card-header">
+        <h2 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i>Total Response</h2>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <h4 style="padding: 30px;">{{ totalResponse }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card card-chart-sm">
+      <div class="card-header">
+        <h2 class="card-title"><i class="tim-icons icon-send text-success"></i>See all responses</h2>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <h4 style="padding: 30px;">Click here to check individual responses</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="col-lg">
+  <div class="card card-chart">
+    <div class="card-header ">
+      <div class="row">
+        <div class="col-sm-6 text-left">
+          <h2 class="card-title">Detailed Analysis</h2>
+        </div>
+        <div class="col-sm-6">
+          <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+            <label class="btn btn-sm btn-primary btn-simple active" id="0" (click)="tab = 0">
+              <input type="radio" name="options" checked="">
+              <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Pie charts</span>
+              <span class="d-block d-sm-none">
+                <i class="tim-icons icon-single-02"></i>
+              </span>
+            </label>
+            <label class="btn btn-sm btn-primary btn-simple" id="1" (click)="tab = 1">
+              <input type="radio" class="d-none d-sm-none" name="options">
+              <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Charts</span>
+              <span class="d-block d-sm-none">
+                <i class="tim-icons icon-gift-2"></i>
+              </span>
+            </label>
+            <label class="btn btn-sm btn-primary btn-simple" id="2" (click)="tab = 2">
+              <input type="radio" class="d-none" name="options">
+              <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Suggestions</span>
+              <span class="d-block d-sm-none">
+                <i class="tim-icons icon-tap-02"></i>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="chart-area">
+        <div class="pie" *ngIf="tab == 0">
+          <h4 style="padding: 10px;">Q1. Availability of lecture plan as per syllabus in the begining of the semester
+            and coverage of syllabus accordingly ?</h4>
+          <canvas baseChart [data]="pieChartData[0]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q2. 2. Coverage of the syllabus.</h4>
+          <canvas baseChart [data]="pieChartData[1]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q3. Regularity of the teacher.</h4>
+          <canvas baseChart [data]="pieChartData[2]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q4. Knowledge of the subject.</h4>
+          <canvas baseChart [data]="pieChartData[3]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q5. Ability of teacher to teach / explain confidently and answer queries in the
+            class.</h4>
+          <canvas baseChart [data]="pieChartData[4]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q6. Organization of the lecture.</h4>
+          <canvas baseChart [data]="pieChartData[5]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q7. Audibility of teacher's voice during classes.</h4>
+          <canvas baseChart [data]="pieChartData[6]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q8. Utilization of blackboard/other teaching aids.</h4>
+          <canvas baseChart [data]="pieChartData[7]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q9. Summarizing of key points by the teacher at the end of a class.</h4>
+          <canvas baseChart [data]="pieChartData[8]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q10. Understanding of the concepts using solution of problems/ numerical in the
+            class.</h4>
+          <canvas baseChart [data]="pieChartData[9]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q11. Respect and understanding for students.</h4>
+          <canvas baseChart [data]="pieChartData[10]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q12. Encouragement to the students for asking questions in the class .</h4>
+          <canvas baseChart [data]="pieChartData[11]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q13. Tolerance to different opinions, arguments expressed in class.</h4>
+          <canvas baseChart [data]="pieChartData[12]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q14. Availability of teacher beyond the class hours.</h4>
+          <canvas baseChart [data]="pieChartData[13]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q15. Ability to adjust to the pace of class to the students' level of
+            understanding.</h4>
+          <canvas baseChart [data]="pieChartData[14]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q16. Regular assignments in the tutorial class.</h4>
+          <canvas baseChart [data]="pieChartData[15]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q17. Checking and timely return of corrected assignments.</h4>
+          <canvas baseChart [data]="pieChartData[16]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q18. Guidelines and tips on pattern of question papers and exams provided by the
+            teacher.</h4>
+          <canvas baseChart [data]="pieChartData[17]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q19.Level of mid-semester/class tests.</h4>
+          <canvas baseChart [data]="pieChartData[18]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q20. Timely evaluation and showing of answer sheets of mid semester exams/class
+            tests.</h4>
+          <canvas baseChart [data]="pieChartData[19]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q21. Uniform coverage (unit wise) of syllabus as per prescribed guidelines in the
+            end semester question paper.</h4>
+          <canvas baseChart [data]="pieChartData[20]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q22. Level of end semester exams ?</h4>
+          <canvas baseChart [data]="pieChartData[21]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q23. Satisfaction level for the evaluation of end semester exam.</h4>
+          <canvas baseChart [data]="pieChartData[22]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q24. Fairness of end semester exams evaluation.</h4>
+          <canvas baseChart [data]="pieChartData[23]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+          <h4 style="padding: 10px;">Q25. Efforts for motivating the students during the course of this subject.</h4>
+          <canvas baseChart [data]="pieChartData[24]" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+        </div>
+        <div class="pie" *ngIf="tab == 1">
+          <h4 style="padding: 10px;">Q1. Availability of lecture plan as per syllabus in the begining of the semester
+            and coverage of syllabus accordingly ?</h4>
+          <canvas baseChart [datasets]="barChartData[0]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q2. 2. Coverage of the syllabus.</h4>
+          <canvas baseChart [datasets]="barChartData[1]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q3. Regularity of the teacher.</h4>
+          <canvas baseChart [datasets]="barChartData[2]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q4. Knowledge of the subject.</h4>
+          <canvas baseChart [datasets]="barChartData[3]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q5. Ability of teacher to teach / explain confidently and answer queries in the
+            class.</h4>
+          <canvas baseChart [datasets]="barChartData[4]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q6. Organization of the lecture.</h4>
+          <canvas baseChart [datasets]="barChartData[5]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q7. Audibility of teacher's voice during classes.</h4>
+          <canvas baseChart [datasets]="barChartData[6]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q8. Utilization of blackboard/other teaching aids.</h4>
+          <canvas baseChart [datasets]="barChartData[7]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q9. Summarizing of key points by the teacher at the end of a class.</h4>
+          <canvas baseChart [datasets]="barChartData[8]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q10. Understanding of the concepts using solution of problems/ numerical in the
+            class.</h4>
+          <canvas baseChart [datasets]="barChartData[9]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q11. Respect and understanding for students.</h4>
+          <canvas baseChart [datasets]="barChartData[10]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q12. Encouragement to the students for asking questions in the class .</h4>
+          <canvas baseChart [datasets]="barChartData[11]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q13. Tolerance to different opinions, arguments expressed in class.</h4>
+          <canvas baseChart [datasets]="barChartData[12]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q14. Availability of teacher beyond the class hours.</h4>
+          <canvas baseChart [datasets]="barChartData[13]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q15. Ability to adjust to the pace of class to the students' level of
+            understanding.</h4>
+          <canvas baseChart [datasets]="barChartData[14]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q16. Regular assignments in the tutorial class.</h4>
+          <canvas baseChart [datasets]="barChartData[15]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q17. Checking and timely return of corrected assignments.</h4>
+          <canvas baseChart [datasets]="barChartData[16]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q18. Guidelines and tips on pattern of question papers and exams provided by the
+            teacher.</h4>
+          <canvas baseChart [datasets]="barChartData[17]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q19.Level of mid-semester/class tests.</h4>
+          <canvas baseChart [datasets]="barChartData[18]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q20. Timely evaluation and showing of answer sheets of mid semester exams/class
+            tests.</h4>
+          <canvas baseChart [datasets]="barChartData[19]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q21. Uniform coverage (unit wise) of syllabus as per prescribed guidelines in the
+            end semester question paper.</h4>
+          <canvas baseChart [datasets]="barChartData[20]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q22. Level of end semester exams ?</h4>
+          <canvas baseChart [datasets]="barChartData[21]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q23. Satisfaction level for the evaluation of end semester exam.</h4>
+          <canvas baseChart [datasets]="barChartData[22]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q24. Fairness of end semester exams evaluation.</h4>
+          <canvas baseChart [datasets]="barChartData[23]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+          <h4 style="padding: 10px;">Q25. Efforts for motivating the students during the course of this subject.</h4>
+          <canvas baseChart [datasets]="barChartData[24]" [labels]="pieChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+        </div>
+        <div class="pie" *ngIf="tab == 2">
+          <h4 style="padding: 10px;">Q1. Availability of lecture plan as per syllabus in the begining of the semester
+            and coverage of syllabus accordingly ?</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q2. 2. Coverage of the syllabus.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q3. Regularity of the teacher.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q4. Knowledge of the subject.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q5. Ability of teacher to teach / explain confidently and answer queries in the
+            class.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q6. Organization of the lecture.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q7. Audibility of teacher's voice during classes.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q8. Utilization of blackboard/other teaching aids.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q9. Summarizing of key points by the teacher at the end of a class.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q10. Understanding of the concepts using solution of problems/ numerical in the
+            class.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q11. Respect and understanding for students.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 3">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 3">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q12. Encouragement to the students for asking questions in the class .</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q13. Tolerance to different opinions, arguments expressed in class.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q14. Availability of teacher beyond the class hours.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q15. Ability to adjust to the pace of class to the students' level of
+            understanding.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q16. Regular assignments in the tutorial class.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q17. Checking and timely return of corrected assignments.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q18. Guidelines and tips on pattern of question papers and exams provided by the
+            teacher.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q19.Level of mid-semester/class tests.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q20. Timely evaluation and showing of answer sheets of mid semester exams/class
+            tests.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q21. Uniform coverage (unit wise) of syllabus as per prescribed guidelines in the
+            end semester question paper.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q22. Level of end semester exams ?</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q23. Satisfaction level for the evaluation of end semester exam.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q24. Fairness of end semester exams evaluation.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+          <h4 style="padding: 10px;">Q25. Efforts for motivating the students during the course of this subject.</h4>
+          <div style="padding: 20px;">
+            <h5 style="color: green;" *ngIf="suggestion[0] > 4">{{ suggestionText[0] }}</h5>
+            <h5 style="color: orange;" *ngIf="suggestion[0] >= 2 && suggestion[0] <= 4">{{ suggestionText[1] }}</h5>
+            <h5 style="color: red;" *ngIf="suggestion[0] < 2">{{ suggestionText[2] }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>

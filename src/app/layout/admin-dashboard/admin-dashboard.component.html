@@ -1,0 +1,12 @@
+<app-top-nav></app-top-nav>
+<div class="wrapper">
+  <app-admin-side-nav></app-admin-side-nav>
+  <div class="container">
+    <div class="box" [ngClass]="{'d-none': sideNavService.profile }">
+      <app-dashboard></app-dashboard>
+    </div>
+    <div class="box" [ngClass]="{'d-none': sideNavService.feedbackForm }">
+      <app-settings></app-settings>
+    </div>
+  </div>
+</div>

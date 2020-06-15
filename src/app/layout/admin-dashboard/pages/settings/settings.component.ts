@@ -1,33 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../auth/auth.service'
+import { AuthService } from '../../../../auth/auth.service'
 import * as firebase from 'firebase';
 
 @Component({
-  selector: 'app-my-profile',
-  templateUrl: './my-profile.component.html',
-  styleUrls: ['./my-profile.component.css']
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.css']
 })
-export class MyProfileComponent implements OnInit {
-
-  constructor(private auth: AuthService) { }
-  username;
-  email;
-  rollNumber;
+export class SettingsComponent implements OnInit {
+  username = "username";
+  email = "e-mail";
+  department = "Select your depatment";
   password: string;
   cPassword: string;
-  user;
-  department: string = "Select your department";
+
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
     this.username = firebase.auth().currentUser.displayName;
     this.email = firebase.auth().currentUser.email;
-    firebase.database().ref('/users/student/' + this.username).once('value')
-      .then((snapshot) => {
-        this.rollNumber = snapshot.val().rollNumber;
-        this.department = snapshot.val().department;
-      });
-
-    console.log(this.rollNumber);
   }
 
   setChanges() {
@@ -40,6 +31,11 @@ export class MyProfileComponent implements OnInit {
         alert("Password does not match")
       }
     }
+
+    firebase.database().ref('users/' + "admin" + "/" + this.username).update({
+      department: this.department
+    });
+
   }
 
 }

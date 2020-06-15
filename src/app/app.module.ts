@@ -20,6 +20,12 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AdminDashboardComponent } from './layout/admin-dashboard/admin-dashboard.component';
+import { SettingsComponent } from './layout/admin-dashboard/pages/settings/settings.component';
+import { DashboardComponent } from './layout/admin-dashboard/pages/dashboard/dashboard.component';
+import { AdminSideNavComponent } from './layout/admin-dashboard/admin-side-nav/admin-side-nav.component';
+
+import { ChartsModule } from 'ng2-charts';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -27,7 +33,9 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'adminRegister', component: AdminRegisterComponent},
-  {path: 'adminLogin', component: AdminLoginComponent}
+  {path: 'adminLogin', component: AdminLoginComponent},
+  {path: 'adminDashboard', component: AdminDashboardComponent},
+  {path: 'adminProfile', component: AdminDashboardComponent},
 ];
 
 const config = {
@@ -53,7 +61,11 @@ const config = {
     ProfileComponent,
     FeedbackformComponent,
     AdminLoginComponent,
-    AdminRegisterComponent
+    AdminRegisterComponent,
+    AdminDashboardComponent,
+    SettingsComponent,
+    DashboardComponent,
+    AdminSideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +75,9 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule // storage
+    AngularFireStorageModule, // storage
+    ChartsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

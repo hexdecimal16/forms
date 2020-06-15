@@ -23,6 +23,7 @@ export class AuthService {
 
   /* Sign up */
   SignUp(email: string, rollNumber: string, username: string, password: string, department: string, type: string) {
+    console.log(type);
     this.angularFireAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
@@ -39,9 +40,11 @@ export class AuthService {
         this.writeUserData(username, email, rollNumber, department, type);
         console.log('You are Successfully signed up!', res);
         if (type == "student") {
+          console.log("going profile");
           this.router.navigate(['/profile']);
-        } else {
-          this.router.navigate(['/adminProfile']);
+        } else if(type === "admin") {
+          console.log("going dashboard");
+          this.router.navigate(['/adminDashboard']);
         }
       })
       .catch(error => {
@@ -59,7 +62,7 @@ export class AuthService {
         if (type == "student") {
           this.router.navigate(['/profile']);
         } else {
-          this.router.navigate(['/adminProfile']);
+          this.router.navigate(['/adminDashboard']);
         }
       })
       .catch(err => {

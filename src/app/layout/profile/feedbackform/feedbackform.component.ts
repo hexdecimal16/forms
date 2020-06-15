@@ -52,15 +52,16 @@ export class FeedbackformComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isVerified = firebase.auth().currentUser.emailVerified;
-    console.log(this.isVerified);
-    if (!this.isVerified) {
-      document.getElementById("feedbackForm").style.display = "none";
-      document.getElementById("emailVerification").style.display = "block";
-    } else {
-      document.getElementById("feedbackForm").style.display = "block";
-      document.getElementById("emailVerification").style.display = "none";
-    }
+    // Email verification disabled for testing
+    // this.isVerified = firebase.auth().currentUser.emailVerified;
+    // console.log(this.isVerified);
+    // if (!this.isVerified) {
+    //   document.getElementById("feedbackForm").style.display = "none";
+    //   document.getElementById("emailVerification").style.display = "block";
+    // } else {
+    //   document.getElementById("feedbackForm").style.display = "block";
+    //   document.getElementById("emailVerification").style.display = "none";
+    // }
   }
 
   resendVerification() {
@@ -75,10 +76,11 @@ export class FeedbackformComponent implements OnInit {
     this.verification();
     if (this.valid) {
       this.username = firebase.auth().currentUser.displayName;
-      firebase.database().ref('/users/' + this.username).once('value')
+      firebase.database().ref('/users/student/' + this.username).once('value')
       .then((snapshot) => {
         this.department = snapshot.val().department;
-        firebase.database().ref('/feedback/' + this.username + "/" + this.department).set({
+        firebase.database().ref('/feedback/' + this.department + "/" + this.username ).set({
+          username: this.username,
           question1: this.question1,
           question2: this.question2,
           question3: this.question3,

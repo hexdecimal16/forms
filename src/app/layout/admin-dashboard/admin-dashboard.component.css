@@ -1,0 +1,7 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 10dp;
+    /* center items horizontally, in this case */
+    align-items: flex-start;
+  }
