@@ -21,7 +21,7 @@ export class MyProfileComponent implements OnInit {
   ngOnInit(): void {
     this.username = firebase.auth().currentUser.displayName;
     this.email = firebase.auth().currentUser.email;
-    firebase.database().ref('/users/student/' + this.username).once('value')
+    firebase.database().ref('/users/student/' + firebase.auth().currentUser.uid).once('value')
       .then((snapshot) => {
         this.rollNumber = snapshot.val().rollNumber;
         this.department = snapshot.val().department;

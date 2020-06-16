@@ -85,7 +85,7 @@ export class AuthService {
   }
 
   writeUserData(username, email, rollNumber, department, type: string) {
-    firebase.database().ref('users/' + type + "/" + username).set({
+    firebase.database().ref('users/' + type + "/" + firebase.auth().currentUser.uid).set({
       username: username,
       email: email,
       rollNumber: rollNumber,

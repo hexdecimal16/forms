@@ -89,7 +89,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.username = firebase.auth().currentUser.displayName;
-    firebase.database().ref('/users/admin/' + this.username).once('value')
+    firebase.database().ref('/users/admin/' + firebase.auth().currentUser.uid).once('value')
       .then((snapshot) => {
         this.department = snapshot.val().department;
         this.getFeedback();

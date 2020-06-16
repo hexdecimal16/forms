@@ -32,7 +32,7 @@ export class SettingsComponent implements OnInit {
       }
     }
 
-    firebase.database().ref('users/' + "admin" + "/" + this.username).update({
+    firebase.database().ref('users/' + "admin" + "/" + firebase.auth().currentUser.uid).update({
       department: this.department
     });
 
